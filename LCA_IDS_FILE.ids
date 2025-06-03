@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ids:ids xmlns:ids="http://standards.buildingsmart.org/IDS" 
+         xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    
+    <ids:info>
+        <ids:title>LCA Information Requirements for BIM Models</ids:title>
+        <ids:copyright>buildingSmart International - LCA Working Group 2024</ids:copyright>
+        <ids:description>Information Delivery Specification for Life Cycle Assessment data validation in BIM models.</ids:description>
+        <ids:date>2024-12-19</ids:date>
+        <ids:milestone>Design Development to Construction Documentation</ids:milestone>
+    </ids:info>
+    
+    <ids:specifications>
+        
+        <!-- Specification 1: Core Material Environmental Impact Data -->
+        <ids:specification ifcVersion="IFC4X3_ADD2" name="LCA_Material_Environmental_A1A3_LOD300">
+            <ids:applicability minOccurs="1" maxOccurs="unbounded">
+                <ids:entity>
+                    <ids:name>
+                        <ids:simpleValue>IFCMATERIAL</ids:simpleValue>
+                    </ids:name>
+                </ids:entity>
+            </ids:applicability>
+            
+            <ids:requirements>
+                <!-- Global Warming Potential -->
+                <ids:property dataType="IFCMASSMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A1A3_GWP_kgCO2eq</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Acidification Potential -->
+                <ids:property dataType="IFCMASSMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A1A3_AP_kgSO2eq</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Eutrophication Potential -->
+                <ids:property dataType="IFCMASSMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A1A3_EP_kgPO4eq</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Abiotic Depletion Potential Materials -->
+                <ids:property dataType="IFCMASSMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A1A3_ADPM_kgSbeq</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Abiotic Depletion Potential Energy -->
+                <ids:property dataType="IFCENERGYMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A1A3_ADPE_MJ</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Ozone Depletion Potential -->
+                <ids:property dataType="IFCMASSMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A1A3_ODP_kgR11eq</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Photochemical Ozone Creation Potential -->
+                <ids:property dataType="IFCMASSMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A1A3_POCP_kgC2H4eq</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Primary Energy Non-Renewable -->
+                <ids:property dataType="IFCENERGYMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A1A3_PENRe_MJ</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Primary Energy Renewable -->
+                <ids:property dataType="IFCENERGYMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A1A3_PERe_MJ</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- EPD Reference -->
+                <ids:property dataType="IFCLABEL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>EPD_Reference</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="EPD-[A-Z]{3}-[0-9]{8}"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- EPD Validity Date -->
+                <ids:property dataType="IFCDATE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>EPD_ValidUntil</ids:simpleValue>
+                    </ids:baseName>
+                </ids:property>
+                
+                <!-- Material Density -->
+                <ids:property dataType="IFCMASSDENSITYMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>Pset_MaterialCommon</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>MassDensity</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0.1"/>
+                            <xs:maxInclusive value="20000"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Material Service Life -->
+                <ids:property dataType="IFCREAL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialEnvironmentalImpacts</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>MaterialLifespan</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="100"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+            </ids:requirements>
+        </ids:specification>
+
+        <!-- Specification 2: Material Transportation -->
+        <ids:specification ifcVersion="IFC4X3_ADD2" name="LCA_Material_Transportation_A4_LOD400">
+            <ids:applicability minOccurs="1" maxOccurs="unbounded">
+                <ids:entity>
+                    <ids:name>
+                        <ids:simpleValue>IFCMATERIAL</ids:simpleValue>
+                    </ids:name>
+                </ids:entity>
+            </ids:applicability>
+            
+            <ids:requirements>
+                <!-- Transportation Distance -->
+                <ids:property dataType="IFCREAL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialTransportation</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A4_TransportDistance_km</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                            <xs:maxInclusive value="10000"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Transportation Mode -->
+                <ids:property dataType="IFCLABEL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialTransportation</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A4_TransportMode</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Truck"/>
+                            <xs:enumeration value="Rail"/>
+                            <xs:enumeration value="Ship"/>
+                            <xs:enumeration value="Multimodal"/>
+                            <xs:enumeration value="Air"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- A4 Environmental Impact -->
+                <ids:property dataType="IFCMASSMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialTransportation</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>A4_GWP_kgCO2eq</ids:simpleValue>
+                    </ids:baseName>
+                </ids:property>
+            </ids:requirements>
+        </ids:specification>
+
+        <!-- Specification 3: Concrete Elements -->
+        <ids:specification ifcVersion="IFC4X3_ADD2" name="LCA_Structure_Concrete_LOD400">
+            <ids:applicability minOccurs="1" maxOccurs="unbounded">
+                <ids:entity>
+                    <ids:name>
+                        <ids:simpleValue>IFCBEAM</ids:simpleValue>
+                    </ids:name>
+                </ids:entity>
+            </ids:applicability>
+            
+            <ids:requirements>
+                <!-- Material Constraint -->
+                <ids:material>
+                    <ids:value>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value=".*[Cc]oncrete.*"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:material>
+                
+                <!-- Concrete Strength Class -->
+                <ids:property dataType="IFCLABEL">
+                    <ids:propertySet>
+                        <ids:simpleValue>Pset_ConcreteElementGeneral</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>StrengthClass</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="C[0-9]{2}/[0-9]{2}"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Element Volume -->
+                <ids:property dataType="IFCVOLUMEMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>Qto_BeamBaseQuantities</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>NetVolume</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0.001"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Environmental Impact -->
+                <ids:property dataType="IFCMASSMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>Pset_EnvironmentalImpactIndicators</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>ClimateChangePerUnit</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="200"/>
+                            <xs:maxInclusive value="500"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+            </ids:requirements>
+        </ids:specification>
+
+        <!-- Specification 4: External Walls -->
+        <ids:specification ifcVersion="IFC4X3_ADD2" name="LCA_Envelope_ExternalWall_LOD400">
+            <ids:applicability minOccurs="1" maxOccurs="unbounded">
+                <ids:entity>
+                    <ids:name>
+                        <ids:simpleValue>IFCWALL</ids:simpleValue>
+                    </ids:name>
+                </ids:entity>
+            </ids:applicability>
+            
+            <ids:requirements>
+                <!-- External Wall Filter -->
+                <ids:property dataType="IFCBOOLEAN">
+                    <ids:propertySet>
+                        <ids:simpleValue>Pset_WallCommon</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>IsExternal</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <ids:simpleValue>true</ids:simpleValue>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Thermal Performance -->
+                <ids:property dataType="IFCTHERMALTRANSMITTANCEMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>Pset_WallCommon</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>ThermalTransmittance</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:maxInclusive value="0.30"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Wall Net Area -->
+                <ids:property dataType="IFCAREAMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>Qto_WallBaseQuantities</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>NetSideArea</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0.1"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+            </ids:requirements>
+        </ids:specification>
+
+        <!-- Specification 5: Windows -->
+        <ids:specification ifcVersion="IFC4X3_ADD2" name="LCA_Envelope_Window_LOD400">
+            <ids:applicability minOccurs="1" maxOccurs="unbounded">
+                <ids:entity>
+                    <ids:name>
+                        <ids:simpleValue>IFCWINDOW</ids:simpleValue>
+                    </ids:name>
+                </ids:entity>
+            </ids:applicability>
+            
+            <ids:requirements>
+                <!-- Window Area -->
+                <ids:property dataType="IFCAREAMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>Qto_WindowBaseQuantities</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>Area</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0.1"/>
+                            <xs:maxInclusive value="50"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Thermal Performance -->
+                <ids:property dataType="IFCTHERMALTRANSMITTANCEMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>Pset_WindowCommon</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>ThermalTransmittance</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:maxInclusive value="2.0"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+            </ids:requirements>
+        </ids:specification>
+
+        <!-- Specification 6: HVAC Equipment -->
+        <ids:specification ifcVersion="IFC4X3_ADD2" name="LCA_MEP_HVAC_Equipment_LOD400">
+            <ids:applicability minOccurs="1" maxOccurs="unbounded">
+                <ids:entity>
+                    <ids:name>
+                        <ids:simpleValue>IFCBOILER</ids:simpleValue>
+                    </ids:name>
+                </ids:entity>
+            </ids:applicability>
+            
+            <ids:requirements>
+                <!-- Energy Source -->
+                <ids:property dataType="IFCLABEL">
+                    <ids:propertySet>
+                        <ids:simpleValue>Pset_BoilerTypeCommon</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>EnergySource</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Electricity"/>
+                            <xs:enumeration value="Gas"/>
+                            <xs:enumeration value="Oil"/>
+                            <xs:enumeration value="Renewable"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Heat Transfer Surface Area -->
+                <ids:property dataType="IFCAREAMEASURE">
+                    <ids:propertySet>
+                        <ids:simpleValue>Pset_BoilerTypeCommon</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>HeatTransferSurfaceArea</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="1000"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+            </ids:requirements>
+        </ids:specification>
+
+        <!-- Specification 7: End-of-Life -->
+        <ids:specification ifcVersion="IFC4X3_ADD2" name="LCA_EndOfLife_Circularity_LOD400">
+            <ids:applicability minOccurs="1" maxOccurs="unbounded">
+                <ids:entity>
+                    <ids:name>
+                        <ids:simpleValue>IFCMATERIAL</ids:simpleValue>
+                    </ids:name>
+                </ids:entity>
+            </ids:applicability>
+            
+            <ids:requirements>
+                <!-- Waste Processing -->
+                <ids:property dataType="IFCLABEL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialCircularity</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>WasteProcessingScenario</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Reuse"/>
+                            <xs:enumeration value="Recycling"/>
+                            <xs:enumeration value="Energy_Recovery"/>
+                            <xs:enumeration value="Composting"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Waste Processing Percentage -->
+                <ids:property dataType="IFCREAL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialCircularity</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>WasteProcessingPercentage</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                            <xs:maxInclusive value="100"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Waste Disposal Percentage -->
+                <ids:property dataType="IFCREAL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_MaterialCircularity</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>WasteDisposalPercentage</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:double">
+                            <xs:minInclusive value="0"/>
+                            <xs:maxInclusive value="100"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+            </ids:requirements>
+        </ids:specification>
+
+        <!-- Specification 8: Data Quality -->
+        <ids:specification ifcVersion="IFC4X3_ADD2" name="LCA_Quality_DataValidation_LOD400">
+            <ids:applicability minOccurs="1" maxOccurs="unbounded">
+                <ids:entity>
+                    <ids:name>
+                        <ids:simpleValue>IFCMATERIAL</ids:simpleValue>
+                    </ids:name>
+                </ids:entity>
+            </ids:applicability>
+            
+            <ids:requirements>
+                <!-- Data Quality Level -->
+                <ids:property dataType="IFCLABEL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_DataQuality</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>DataQualityLevel</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Specific"/>
+                            <xs:enumeration value="Average"/>
+                            <xs:enumeration value="Generic"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- Data Source -->
+                <ids:property dataType="IFCLABEL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_DataQuality</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>DataSource</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Manufacturer_EPD"/>
+                            <xs:enumeration value="Industry_Average_EPD"/>
+                            <xs:enumeration value="Ecoinvent_Database"/>
+                            <xs:enumeration value="National_Database"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+                
+                <!-- EPD Verification -->
+                <ids:property dataType="IFCLABEL">
+                    <ids:propertySet>
+                        <ids:simpleValue>LCA_DataQuality</ids:simpleValue>
+                    </ids:propertySet>
+                    <ids:baseName>
+                        <ids:simpleValue>EPD_VerificationStatus</ids:simpleValue>
+                    </ids:baseName>
+                    <ids:value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Third_Party_Verified"/>
+                            <xs:enumeration value="Independent_Verification"/>
+                            <xs:enumeration value="Self_Declared"/>
+                        </xs:restriction>
+                    </ids:value>
+                </ids:property>
+            </ids:requirements>
+        </ids:specification>
+
+    </ids:specifications>
+</ids:ids>
