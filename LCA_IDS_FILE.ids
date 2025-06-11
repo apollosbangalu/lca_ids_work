@@ -6,9 +6,9 @@
     
     <ids:info>
         <ids:title>LCA Information Requirements for BIM Models</ids:title>
-        <ids:copyright>buildingSmart International - LCA Working Group 2024</ids:copyright>
+        <ids:copyright>Bangalu Apollos Yohanna - BIM and LCA integration research</ids:copyright>
         <ids:description>Information Delivery Specification for Life Cycle Assessment data validation in BIM models.</ids:description>
-        <ids:date>2024-12-19</ids:date>
+        <ids:date>2025-05-30</ids:date>
         <ids:milestone>Design Development to Construction Documentation</ids:milestone>
     </ids:info>
     
