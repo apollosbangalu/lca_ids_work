@@ -871,4 +871,4 @@ The LCA-IDS framework provides a comprehensive, standardized approach to integra
 
 The success of LCA-IDS implementation depends on proper planning, team training, and commitment to data quality. Start with pilot projects, build expertise gradually, and continuously refine processes based on experience and feedback.
 
-For ongoing support and updates, engage with the buildingSmart International community and follow developments in IFC and IDS standards.
+This LCA-IDS was developed as a research by Bangalu Apollos Yohanna, to aid in the BIM and LCA integration domain. For updates, suggestions and advice you can contact the developer through his social network links.
